@@ -76,11 +76,9 @@ export default function AgendaScheduleScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
   },
   keyboardAvoidingView: {
     flex: 1,
-    backgroundColor: "white",
   },
   addButton: {
     fontSize: 30,

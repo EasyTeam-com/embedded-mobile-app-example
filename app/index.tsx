@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Alert, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import ComponentButton from "@/components/ComponentButton";
 import { HeaderImage } from "@/components/HeaderImage";
@@ -18,6 +18,7 @@ export default function Home() {
   const { bottom } = useSafeAreaInsets();
   return (
     <View style={[styles.container, { paddingBottom: bottom }]}>
+      <StatusBar barStyle="light-content" />
       <ParallaxScrollView
         headerBackgroundColor={{ light: "#f0f0f0", dark: "#303131" }}
         headerImage={<HeaderImage />}
