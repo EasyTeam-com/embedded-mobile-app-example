@@ -9,7 +9,7 @@ import {
 
 import { ThemedText } from "@/components/ThemedText";
 import { locations } from "@/configs/locations";
-import { Clock, ClockRef, EventDetailsClockInOut } from "@easyteam/ui";
+import { Clock, ClockRef, EventDetailsClockInOut, EventDetailsOnBreakStarted } from "@easyteam/ui";
 import { useRouter } from "expo-router";
 
 const HeaderRight = ({ hasOpenedShift }: { hasOpenedShift: boolean }) => {
@@ -38,7 +38,7 @@ export default function ClockScreen() {
   }, [hasOpenedShift, navigation]);
 
   const onClockInOutEvent = useCallback(
-    (event: EventDetailsClockInOut) => {
+    (event: EventDetailsClockInOut | EventDetailsOnBreakStarted) => {
       console.log("Clock event received:", event);
 
       switch (event.event_type) {
@@ -74,6 +74,9 @@ export default function ClockScreen() {
         onEvent={onClockInOutEvent}
         longitude={locations[0].longitude}
         latitude={locations[0].latitude}
+        featureRoleLocationClock
+        showLocationPicker
+        showRolesPicker
         customStrings={{
           restrictClockIn: "Restricted!",
         }}
