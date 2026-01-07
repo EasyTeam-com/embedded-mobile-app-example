@@ -5,6 +5,7 @@ export default {
     name: "ezteam-demo",
     slug: "ezteam-demo",
     version: "1.0.0",
+    scheme: "ezteam-demo",
     newArchEnabled: true,
     experiments: {
       typedRoutes: true,

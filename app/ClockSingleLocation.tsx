@@ -2,14 +2,18 @@ import { useNavigation } from "@react-navigation/native";
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import {
   Alert,
-  SafeAreaView,
   StyleSheet,
-  TouchableOpacity,
+  TouchableOpacity
 } from "react-native";
 
 import { ThemedText } from "@/components/ThemedText";
 import { locations } from "@/configs/locations";
-import { Clock, ClockRef, EventDetailsClockInOut, EventDetailsOnBreakStarted } from "@easyteam/ui";
+import {
+  Clock,
+  ClockRef,
+  EventDetailsClockInOut,
+  EventDetailsOnBreakStarted,
+} from "@easyteam/ui";
 import { useRouter } from "expo-router";
 
 const HeaderRight = ({ hasOpenedShift }: { hasOpenedShift: boolean }) => {
@@ -68,20 +72,15 @@ export default function ClockScreen() {
   }, [renders, setRenders, setHasOpenedShift]);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Clock
-        ref={clockRef}
-        onEvent={onClockInOutEvent}
-        longitude={locations[0].longitude}
-        latitude={locations[0].latitude}
-        featureRoleLocationClock
-        showLocationPicker
-        showRolesPicker
-        customStrings={{
-          restrictClockIn: "Restricted!",
-        }}
-      />
-    </SafeAreaView>
+    <Clock
+      ref={clockRef}
+      onEvent={onClockInOutEvent}
+      longitude={locations[0].longitude}
+      latitude={locations[0].latitude}
+      customStrings={{
+        restrictClockIn: "Restricted!",
+      }}
+    />
   );
 }
 

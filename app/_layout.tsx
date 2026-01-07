@@ -91,6 +91,10 @@ export default function RootLayout() {
               options={{ title: "Clock In/Out", headerBackTitle: "Home" }}
             />
             <Stack.Screen
+              name="ClockSingleLocation"
+              options={{ title: "Clock Single Location", headerBackTitle: "Home" }}
+            />
+            <Stack.Screen
               name="ShiftNotes"
               options={{ title: "Shift Notes" }}
             />

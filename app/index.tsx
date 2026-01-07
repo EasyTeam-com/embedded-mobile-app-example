@@ -1,5 +1,12 @@
 import { useRouter } from "expo-router";
-import { Alert, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Alert,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 import ComponentButton from "@/components/ComponentButton";
 import { HeaderImage } from "@/components/HeaderImage";
@@ -31,19 +38,27 @@ export default function Home() {
             onPress={() => router.push("/Clock")}
           />
           <ComponentButton
+            name="Clock Single Location"
+            description="Clock in and out for a single location."
+            icon="timer"
+            onPress={() => router.push("/ClockSingleLocation")}
+          />
+        </View>
+        <View style={styles.row}>
+          <ComponentButton
             name="Agenda"
             description="Manage schedules, open shifts, time offs, etc."
             icon="calendar"
             onPress={() => router.push("/Agenda")}
           />
-        </View>
-        <View style={styles.row}>
           <ComponentButton
             name="Employees"
             description="View list of employees and their timesheets."
             icon="people"
             onPress={() => router.push("/Employees")}
           />
+        </View>
+        <View style={styles.row}>
           <ComponentButton
             name="Timesheet"
             description="Manage employee shifts and notes."
@@ -62,6 +77,12 @@ export default function Home() {
               })
             }
           />
+          <ComponentButton
+            name="Calendar Sync"
+            description="Sync your calendar with your selected provider."
+            icon="sync"
+            onPress={() => router.push("/CalendarSync")}
+          />
         </View>
         <View style={styles.row}>
           <ComponentButton
@@ -69,12 +90,6 @@ export default function Home() {
             description="Manage your settings for geolocation, breaks, etc."
             icon="cog"
             onPress={() => router.push("/Settings")}
-          />
-          <ComponentButton
-            name="Calendar Sync"
-            description="Sync your calendar with your selected provider."
-            icon="sync"
-            onPress={() => router.push("/CalendarSync")}
           />
         </View>
       </ParallaxScrollView>
