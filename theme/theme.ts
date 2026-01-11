@@ -1,5 +1,8 @@
 import { CustomerTheme } from "@easyteam/ui";
 
+export const defaultBackgroundColor = '#171717';
+export const defaultTextColor = '#fff';
+
 export const theme: CustomerTheme = {
   tokens: {
     text: {
